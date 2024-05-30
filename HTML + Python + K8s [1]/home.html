@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hotel and Room List</title>
+    <script src="./home.js"></script>
+</head>
+<body>
+    <h1>Hotel and Room List</h1>
+    <button onclick="getHotels()">Get Hotels</button>
+    <button onclick="getRooms()">Get Rooms</button>
+
+    <h2>Hotel List</h2>
+    <table id="hotel-table" style="border: 1px solid black; text-align: center;">
+        <thead>
+            <tr>
+                <th>Hotel Name</th>
+                <th>Location</th>
+                <!-- Add more columns as needed -->
+            </tr>
+        </thead>
+        <tbody id="hotel-table-body">
+            <!-- Hotel data will be dynamically populated here -->
+        </tbody>
+    </table>
+
+    <h2>Room List</h2>
+    <table id="room-table" style="border: 1px solid black; text-align: center;">
+        <thead>
+            <tr>
+                <th>Hotel Name</th>
+                <th>Room Number</th>
+                <th>Room Size</th>
+                <th>Vacancy</th>
+                <!-- Add more columns as needed -->
+            </tr>
+        </thead>
+        <tbody id="room-table-body">
+            <!-- Room data will be dynamically populated here -->
+        </tbody>
+    </table>
+
+
+</body>
+</html>

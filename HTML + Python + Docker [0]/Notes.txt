@@ -1,0 +1,7 @@
+**Make file also available, thought not recommended to use
+
+1. Run Docker Compose Up.
+
+2. Open home.html and test both buttons
+
+3. Run Docker Compose Down

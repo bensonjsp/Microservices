@@ -1,0 +1,23 @@
+**Make file also available, thought not recommended to use
+
+Ensure kubectl and minikube is installed for CLI and to test locally respectively.
+
+May have to enable CORS using a Google Extension.
+
+1. Type and enter "minikube start" to run minikube.
+
+2. In cmd, type and enter "@FOR /f "tokens=*" %i IN ('minikube docker-env') DO @%i" to set environment variables i.e. point to Docker in Minikube VM
+
+3. Ensure "docker compose up -d" is runned (to build images, if not done so). Then "docker compose down"
+
+4. Type and enter "kubectl apply -f k8s.yaml".
+
+5. In cmd, type "minikube tunnel" to expose service to localhost
+
+6. Open home.html and click on buttons to fetch data
+
+For Vue:
+
+1. Change directory to Vue folder
+
+2. Run "npm run dev" and open link

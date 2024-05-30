@@ -1,0 +1,40 @@
+version: '3.8'
+name: hotel-room
+services:
+  mysql-db:
+    image: mysql:latest
+    container_name: MySQL
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - ./hotel/hotel.sql:/docker-entrypoint-initdb.d/hotel.sql
+      - ./room/room.sql:/docker-entrypoint-initdb.d/room.sql
+      
+  hotel:
+    build:
+      context: ./hotel
+      dockerfile: hotel.Dockerfile
+    image: sunzi/hotel:1.0
+    container_name: Hotel
+    depends_on:
+      - mysql-db
+    restart: always
+    ports:
+      - 5001:5001
+    environment:
+      HOTEL_DB_URL: ${HOTEL_DB_URL}
+
+  room:
+    build:
+      context: ./room
+      dockerfile: room.Dockerfile
+    image: sunzi/room:1.0
+    container_name: Room
+    depends_on:
+      - mysql-db
+    restart: always
+    ports:
+      - 5002:5002
+    environment:
+      ROOM_DB_URL: ${ROOM_DB_URL}
